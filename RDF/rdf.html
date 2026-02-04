@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <title>URI-generator</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e0f7fa;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    #taskContainer {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #006064;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    button {
+      background-color: #00796b;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      cursor: pointer;
+      margin: 20px auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    .centered {
+      text-align: center;
+    }
+
+    .uriRow {
+      margin: 15px 0;
+      font-size: 1.2em;
+    }
+
+    .uriValue {
+  font-family: monospace;
+  color: #004d40;
+  text-decoration: none;
+  font-size: 1.3em;
+}
+
+
+    .uriValue:hover {
+      text-decoration: underline;
+    }
+
+    .copyBtn {
+      background: none;
+      border: none;
+      color: #00796b;
+      cursor: pointer;
+      margin-left: 8px;
+      font-size: 1em;
+    }
+
+    .copyBtn:hover {
+      color: #004d40;
+    }
+
+    h2 {
+      margin-top: 30px;
+      text-align: center;
+      color: #006064;
+    }
+
+    #answer {
+      width: 100%;
+      max-width: 600px;
+      height: 100px;
+      margin: 15px auto;
+      display: block;
+      padding: 12px;
+      font-family: monospace;
+      font-size: 1.1em;
+      border: 2px solid #004d40;
+      border-radius: 8px;
+      resize: vertical;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="taskContainer">
+
+  <h1>
+    <i class="fas fa-network-wired"></i>
+    URI-generator
+  </h1>
+
+  <div class="centered">
+    <button id="newTask">
+      <i class="fas fa-sync-alt"></i>
+      Nya URI:er
+    </button>
+
+    <div class="uriRow">
+      <strong>Subjekt:</strong>
+      <a id="subject" class="uriValue" href="#" target="_blank"></a>
+      <button class="copyBtn" data-target="subject">
+        <i class="fas fa-copy"></i>
+      </button>
+    </div>
+
+    <div class="uriRow">
+      <strong>Predikat:</strong>
+      <a id="predicate" class="uriValue" href="#" target="_blank"></a>
+      <button class="copyBtn" data-target="predicate">
+        <i class="fas fa-copy"></i>
+      </button>
+    </div>
+  </div>
+
+  <h2>Skriv din trippel här:</h2>
+
+  <textarea id="answer"
+            placeholder="Skriv en RDF-trippel här..."></textarea>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
